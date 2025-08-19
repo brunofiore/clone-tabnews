@@ -1,9 +1,14 @@
 function Home() {
-  return <h1>🏳️‍🌈 Lista de viadassos sem cura: 🏳️‍🌈</h1>
-  <h2>- Bruno Fidalgo\n- Arthur Olivares</h2>;
+  return (
+    <div>
+      <h1>🏳️‍🌈 Lista de amigos viadassos 🏳️‍🌈</h1>
+      <ul>
+        <h2>- Bruno Fidalgo</h2>
+        <h2>- Tuta Olivares</h2>
+        <h2>- Gabomel Assasino</h2>
+      </ul>
+    </div>
+  );
 }
 
-function Teste() {
-  console.log("identação errada");
-}
 export default Home;
