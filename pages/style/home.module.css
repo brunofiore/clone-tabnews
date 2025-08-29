@@ -1,0 +1,166 @@
+.container {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #9400d3
+  );
+  background-size: 400% 400%;
+  animation: rainbow 15s ease infinite;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Partículas decorativas */
+.container::before,
+.container::after {
+  content: "✨🌈💖⭐";
+  position: absolute;
+  font-size: 2rem;
+  animation: float 8s linear infinite;
+  opacity: 0.7;
+}
+
+.container::before {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.container::after {
+  bottom: 10%;
+  right: 5%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Título com efeito neon */
+.title {
+  font-size: 3rem;
+  margin-top: 2rem;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 15px #ff00de,
+    0 0 30px #ff00de,
+    0 0 60px #ff00de;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 10px #ff00de,
+      0 0 20px #ff00de,
+      0 0 30px #ff00de;
+  }
+  to {
+    text-shadow:
+      0 0 20px #00f7ff,
+      0 0 40px #00f7ff,
+      0 0 60px #00f7ff;
+  }
+}
+
+/* Lista */
+.list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  width: 80%;
+  max-width: 500px;
+}
+
+/* Item da lista como card */
+.item {
+  font-size: 1.6rem;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.item:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  z-index: -1;
+  filter: blur(4px);
+  opacity: 0.8;
+  animation: border-rainbow 5s linear infinite;
+}
+
+@keyframes border-rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
