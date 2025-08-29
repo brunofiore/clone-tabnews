@@ -1,4 +1,4 @@
-import styles from "pages/style/home.module.css";
+import styles from "./style/home.module.css";
 
 function Home() {
   return (
@@ -9,6 +9,11 @@ function Home() {
         <li className={styles.item}>- Tuta Olivares</li>
         <li className={styles.item}>- Gabomel Assasino</li>
       </ul>
+
+      {/* Texto pequeno no cantinho */}
+      <div className={styles.cantinho}>
+        lista da leoa mais linda do servidor: - Isabela Orseta
+      </div>
     </div>
   );
 }

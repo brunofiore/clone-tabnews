@@ -164,3 +164,14 @@
     background-position: 200% 50%;
   }
 }
+
+.cantinho {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #fff;
+  opacity: 0.7;
+  z-index: 999;
+  pointer-events: none; /* não atrapalha cliques */
+}
