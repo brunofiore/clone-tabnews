@@ -1,11 +1,13 @@
+import styles from "./style/home.module.css";
+
 function Home() {
   return (
-    <div>
-      <h1>🏳️‍🌈 Lista de amigos viadassos 🏳️‍🌈</h1>
-      <ul>
-        <h2>- Bruno Fidalgo</h2>
-        <h2>- Tuta Olivares</h2>
-        <h2>- Gabomel Assasino</h2>
+    <div className={styles.container}>
+      <h1 className={styles.title}>🏳️‍🌈 Lista de amigos viadassos 🏳️‍🌈</h1>
+      <ul className={styles.list}>
+        <li className={styles.item}>- Bruno Fidalgo</li>
+        <li className={styles.item}>- Tuta Olivares</li>
+        <li className={styles.item}>- Gabomel Assasino</li>
       </ul>
     </div>
   );
