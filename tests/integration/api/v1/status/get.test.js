@@ -11,7 +11,7 @@ test("GET no /api/v1/status deve retornar 200", async () => {
   expect(responseBody.updated_at).toEqual(parsedUpdatedAt);
 
   //Valida a versão do banco de dados retornada
-  console.log(responseBody);
+
   expect(responseBody.dependencies.database.db_version).toEqual(
     expect.any(String),
   );
