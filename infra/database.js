@@ -19,6 +19,8 @@ async function getNewClient() {
     "POSTGRES_PASSWORD =>",
     JSON.stringify(process.env.POSTGRES_PASSWORD),
   );
+  console.log("POSTGRES_USER =>", JSON.stringify(process.env.POSTGRES_USER));
+  console.log("POSTGRES_DB =>", JSON.stringify(process.env.POSTGRES_DB));
   console.log("NODE_ENV =>", process.env.NODE_ENV);
   const client = new Client({
     host: process.env.POSTGRES_HOST,
