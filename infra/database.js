@@ -15,6 +15,11 @@ async function query(queryObject) {
 }
 
 async function getNewClient() {
+  console.log(
+    "POSTGRES_PASSWORD =>",
+    JSON.stringify(process.env.POSTGRES_PASSWORD),
+  );
+  console.log("NODE_ENV =>", process.env.NODE_ENV);
   const client = new Client({
     host: process.env.POSTGRES_HOST,
     port: process.env.POSTGRES_PORT,
