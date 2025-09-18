@@ -17,6 +17,7 @@ async function status(request, response) {
         db_version: dbVersion.rows[0].server_version,
         db_max: parseInt(dbMaxConnection.rows[0].max_connections),
         db_used: dbUsedConnection.rows[0].total_connections,
+        db_name: dbName,
       },
     },
   });
