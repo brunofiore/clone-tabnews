@@ -1,4 +1,9 @@
 const { resolve } = require("styled-jsx/css");
+import orchestrator from "tests/integration/api/v1/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
+});
 
 test("GET no /api/v1/status deve retornar 200", async () => {
   //Valida resposta 200 do http
