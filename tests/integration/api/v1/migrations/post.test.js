@@ -1,14 +1,13 @@
 import database from "infra/database.js";
-
+import orchestrator from "tests/integration/api/v1/orchestrator.js";
 const { resolve } = require("styled-jsx/css");
 
-beforeAll(cleanDatabase);
-
-async function cleanDatabase() {
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
   await database.query("drop schema public cascade; create schema public;");
-}
+});
 
-test("GET no /api/v1/migrations deve retornar 200", async () => {
+test("POST no /api/v1/migrations deve retornar 200", async () => {
   //Valida resposta 200 do http
   const response1 = await fetch("http://localhost:3000/api/v1/migrations", {
     method: "POST",
