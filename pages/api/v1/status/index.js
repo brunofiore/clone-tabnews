@@ -1,5 +1,4 @@
 import database from "infra/database.js";
-import { TRACE_OUTPUT_VERSION } from "next/dist/shared/lib/constants";
 
 async function status(request, response) {
   const updatedAt = new Date().toISOString();
