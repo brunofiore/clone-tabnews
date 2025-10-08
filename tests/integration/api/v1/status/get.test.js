@@ -1,4 +1,3 @@
-const { resolve } = require("styled-jsx/css");
 import orchestrator from "tests/integration/api/v1/orchestrator.js";
 
 beforeAll(async () => {

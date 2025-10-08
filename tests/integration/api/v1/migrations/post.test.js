@@ -1,6 +1,5 @@
 import database from "infra/database.js";
 import orchestrator from "tests/integration/api/v1/orchestrator.js";
-const { resolve } = require("styled-jsx/css");
 
 beforeAll(async () => {
   await orchestrator.waitForAllServices();
