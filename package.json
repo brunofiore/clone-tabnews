@@ -4,7 +4,8 @@
   "description": "ainda não faço a menor ideia do que estou fazendo",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && npm run wait-for-postgres && npm run migration:up && next dev",
+    "dev": "npm run services:up && npm run services:wait:database && npm run migrations:up && next dev",
+    "posttest": "npm run services:stop",
     "test": "npm run services:up && concurrently -n next,jest --hide next -k --s command-jest \"next dev\" \"jest --runInBand\"",
     "test:watch": "jest --watchAll",
     "lint:prettier:check": "prettier --check .",
