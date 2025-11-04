@@ -21,7 +21,11 @@ function UpdatedAt() {
   });
 
   let updatedAtText = "Carregando...";
-  let dbVersionText, dbMaxText, dbUsedText, dbNameText;
+  let dbVersionText = "Carregando...";
+  let dbMaxText = "Carregando...";
+  let dbUsedText = "Carregando...";
+  let dbNameText = "Carregando...";
+
   if (!isLoading && data) {
     updatedAtText = new Date(data.updated_at).toLocaleString("pt-BR");
     dbVersionText = data.dependencies.database.db_version;
