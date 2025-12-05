@@ -1,0 +1,20 @@
+import { createRouter } from "next-connect";
+import controller from "infra/controller";
+import user from "models/user";
+
+const router = createRouter();
+
+router.post(postHandler);
+
+export default router.handler({
+  onNoMatch: controller.onNoMatchHandler,
+  onError: controller.onErrorHandler,
+});
+
+async function postHandler(request, response) {
+  const userInputValues = request.body;
+
+  const newUser = await user.create(userInputValues);
+
+  return response.status(201).json(newUser);
+}
