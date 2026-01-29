@@ -10,19 +10,11 @@ beforeAll(async () => {
 describe("GET /api/v1/users/[username]", () => {
   describe("Usuário anonimo", () => {
     test("Com um usuário com extamanete o mesmo nome", async () => {
-      const response1 = await fetch("http://localhost:3000/api/v1/users", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          username: "MesmoNome",
-          email: "mesmonome@gmail.com",
-          password: "teste123",
-        }),
+      await orchestrator.createUser({
+        username: "MesmoNome",
+        email: "mesmonome@gmail.com",
+        password: "teste123",
       });
-
-      expect(response1.status).toBe(201);
 
       const response2 = await fetch(
         "http://localhost:3000/api/v1/users/MesmoNome",
@@ -45,19 +37,11 @@ describe("GET /api/v1/users/[username]", () => {
       expect(Date.parse(response2Body.updated_at)).not.toBeNaN();
     });
     test("Com um usuário sem letra maiuscula", async () => {
-      const response1 = await fetch("http://localhost:3000/api/v1/users", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          username: "SemLetra",
-          email: "semletra@gmail.com",
-          password: "teste123",
-        }),
+      await orchestrator.createUser({
+        username: "SemLetra",
+        email: "semletra@gmail.com",
+        password: "teste123",
       });
-
-      expect(response1.status).toBe(201);
 
       const response2 = await fetch(
         "http://localhost:3000/api/v1/users/semletra",
